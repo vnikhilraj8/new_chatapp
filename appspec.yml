@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /newchat_app
+hooks:
+  ApplicationStop:
+    - location: scripts/reload_server.sh
+      timeout: 300
+      runas: root
