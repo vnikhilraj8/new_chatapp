@@ -8,6 +8,10 @@ hooks:
     - location: scripts/clean.sh
       timeout: 300
       runas: root
+  AfterInstall:
+    - location: scripts/supervisorStart.sh
+      timeout: 300
+      runas: root
   ApplicationStop:
     - location: scripts/reload_server.sh
       timeout: 300
