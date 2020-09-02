@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /new_chatapp
 hooks:
+  BeforeInstall:
+    - location: scripts/clean.sh
+      timeout: 300
+      runas: root
   ApplicationStop:
     - location: scripts/reload_server.sh
       timeout: 300
