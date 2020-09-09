@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("deploy") {
             steps{
-                ([$class: 'AWSCodeDeployPublisher',
+               step([$class: 'AWSCodeDeployPublisher',
                      applicationName: 'chat-Application', awsAccessKey: '',
                      awsSecretKey: '',
                      credentials: 'awsAccessKey', deploymentConfig: 'CodeDeployDefault.OneAtATime',
