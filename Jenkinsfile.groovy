@@ -4,7 +4,7 @@ pipeline {
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('chat-app-sonar') { // If you have configured more than one global server connection, you can specify its name
-                    bat "C:/Users/Administrator/Downloads/sonar-scanner-cli-4.4.0.2170-windows/sonar-scanner-4.4.0.2170-windows/bin/sonar-scanner"
+                    sh "C:/Users/Administrator/Downloads/sonar-scanner-cli-4.4.0.2170-windows/sonar-scanner-4.4.0.2170-windows/bin/sonar-scanner"
                 }
             }
         }
