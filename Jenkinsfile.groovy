@@ -4,7 +4,7 @@ pipeline {
         stage('SonarQube analysis') {
             steps {
                 withSonarQubeEnv('chat-app-sonar') { // If you have configured more than one global server connection, you can specify its name
-                    sh "sonar/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner"
+                    sh "/sonar/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner"
                 }
             }
         }
