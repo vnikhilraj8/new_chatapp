@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv('sonar-scanner') { // If you have configured more than one global server connection, you can specify its name
+                withSonarQubeEnv('sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
                     sh "/opt/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner"
                 }
             }
