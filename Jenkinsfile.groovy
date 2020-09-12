@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('SonarQube analysis') {
             steps {
-                withSonarQubeEnv('chat-app-sonar') { // If you have configured more than one global server connection, you can specify its name
-                    sh "/sonar/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner"
+                withSonarQubeEnv('sonar-scanner') { // If you have configured more than one global server connection, you can specify its name
+                    sh "/opt/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner"
                 }
             }
         }
@@ -13,7 +13,11 @@ pipeline {
                 timeout(time: 3, unit: 'MINUTES') {
                     // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
                     // true = set pipeline to UNSTABLE, false = don'
-                    waitForQualityGate abortPipeline: true
+                    def qg = waitForQualityGate() // Reuse taskId previously collected by withSonarQubeEnv
+                    if (qg.status != 'OK') {
+                        error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                    }
+                    //waitForQualityGate abortPipeline: true
                 }
             }
         }
