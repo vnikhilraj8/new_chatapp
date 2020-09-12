@@ -8,6 +8,19 @@ pipeline {
                 }
             }
         }
+        stage("Quality Gate") {
+            steps {
+                timeout(time: 3, unit: 'MINUTES') {
+                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
+                    // true = set pipeline to UNSTABLE, false = don't
+                    def qg = waitForQualityGate()
+                    if (qg.status != 'OK') {
+                        error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                    }
+                    waitForQualityGate abortPipeline: true
+                }
+            }
+        }
         stage("deploy") {
             steps{
                step([$class: 'AWSCodeDeployPublisher',
@@ -18,5 +31,6 @@ pipeline {
                      excludes: '', iamRoleArn: '', includes: '**', proxyHost: '', proxyPort: 0, region: 'us-east-2',
                      s3bucket: 'demo24123', s3prefix: '', subdirectory: '', versionFileName: '', waitForCompletion: false])
         }}
+
     }
 }
