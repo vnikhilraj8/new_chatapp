@@ -5,4 +5,11 @@ node{
     stage('Build Docker Image'){
         sh 'docker build -t sanjanakr/my-app:2.0.0 .'
     }
+
+    stage('Push Docker Image'){
+        withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+            sh "docker login -u sanjanakr -p ${dockerHubPwd}"
+        }
+        sh 'docker push sanjanakr/my-app:2.0.0'
+    }
 }
