@@ -1,0 +1,8 @@
+node{
+    stage('copy the code'){
+        sh 'ls -l'
+    }
+    stage('Build Docker Image'){
+        sh 'docker build -t sanjana/chat-app:latest .'
+    }
+}
