@@ -12,4 +12,11 @@ node{
         }
         sh 'docker push sanjanakr/my-app:2.0.0'
     }
+
+    stage('Run Container on Dev Server'){
+        def dockerRun = 'docker run -d -p 9001:8000 -d --name my-app sanjanakr/my-app:2.0.0'
+            sh "sudo ssh -i /sanjana.pem -o StrictHostKeyChecking=no ubuntu@190.178.0.11 ${dockerRun}"
+        }
 }
+
+
