@@ -1,8 +1,8 @@
 node{
-    stage('copy the code'){
-        sh 'ls -l'
+    stage('SCM Checkout'){
+        git url: 'https://github.com/Sanjana-cell/Django-Chat-Application.git'
     }
     stage('Build Docker Image'){
-        sh 'docker build -t sanjana/chat-app:latest .'
+        sh 'docker build -t sanjanakr/my-app:2.0.0 .'
     }
 }
