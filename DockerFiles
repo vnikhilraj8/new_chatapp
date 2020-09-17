@@ -13,5 +13,5 @@ RUN pip3 install mysqlclient
 EXPOSE 8000
 
 # define the default command to run when starting the container
-CMD ["gunicorn", "--chdir", "chat-app", "--bind", ":8000", "fundoo.wsgi:application"]
+CMD ["gunicorn", "--chdir", "fundoo", "--bind", ":8000", "fundoo.wsgi:application"]
 
