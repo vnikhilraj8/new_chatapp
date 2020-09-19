@@ -3,15 +3,15 @@ node{
         git url: 'https://github.com/Sanjana-cell/Django-Chat-Application.git'
     }
     stage('Build Docker Image'){
-        sh "docker build -t sanjanakr/my-app:${BUILD_ID}"
+        sh "docker build -t sanjanakr/my-app:${BUILD_ID}.0.0"
     }
 
     stage('Push Docker Image'){
         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
             sh "docker login -u sanjanakr -p ${dockerHubPwd}"
         }
-        sh "docker push sanjanakr/my-app:${BUILD_ID}"
-        sh "docker tag sanjanakr/my-app:${BUILD_ID}  sanjanakr/my-app:latest"
+        sh "docker push sanjanakr/my-app:${BUILD_ID}.0.0"
+        sh "docker tag sanjanakr/my-app:${BUILD_ID}.0.0  sanjanakr/my-app:latest"
         sh "docker push sanjanakr/my-app:latest"
     }
 
