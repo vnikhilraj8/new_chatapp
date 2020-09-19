@@ -19,6 +19,6 @@ node{
         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
             sh "docker login -u sanjanakr -p ${dockerHubPwd}"
         }
-        sh "sudo ssh -i /sanjana.pem -o StrictHostKeyChecking=no ubuntu@190.178.0.11 ${WORKSPACE}/scripts/./docker.sh"
+        sh "sudo ssh -i /sanjana.pem -o StrictHostKeyChecking=no ubuntu@190.178.0.11 /./docker.sh"
     }
 }
