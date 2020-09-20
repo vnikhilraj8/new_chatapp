@@ -5,7 +5,7 @@ FROM python:3.6
 RUN mkdir -p /opt/services/djangoapp/src
 WORKDIR /opt/services/djangoapp/src
 # copy our project code
-COPY /var/lib/jenkins/workspace/docker-app/ /opt/services/djangoapp/src
+COPY . /opt/services/djangoapp/src
 RUN ls -l /opt/services/djangoapp/src
 RUN pip3 install -r /opt/services/djangoapp/src/requirements.txt
 RUN pip3 install mysqlclient
