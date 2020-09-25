@@ -10,8 +10,8 @@ RUN ls -l /opt/services/djangoapp/src
 RUN pip3 install -r /opt/services/djangoapp/src/requirements.txt
 RUN pip3 install mysqlclient
 # expose the port 8000
-EXPOSE 8000
+EXPOSE 8002
 
 # define the default command to run when starting the container
-CMD ["gunicorn", "--chdir", "fundoo", "--bind", ":8000", "fundoo.wsgi:application"]
+CMD ["gunicorn", "--chdir", "fundoo", "--bind", ":8002", "fundoo.wsgi:application"]
 
