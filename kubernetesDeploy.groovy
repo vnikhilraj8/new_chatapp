@@ -7,7 +7,7 @@ node{
     }
 
     stage('Push Docker Image'){
-        sh "aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 513124100898.dkr.ecr.us-east-2.amazonaws.com"
+        sh "aws ecr get-login-password --region us-east-2 | docker login --username AWS --password-stdin 513124100898.dkr.ecr.us-east-2.amazonaws.com"
         sh "docker tag chat-app:${BUILD_ID}.0.0  513124100898.dkr.ecr.us-east-2.amazonaws.com/chat-app:latest"
         sh "docker push 513124100898.dkr.ecr.us-east-2.amazonaws.com/chat-app:latest"
     }
