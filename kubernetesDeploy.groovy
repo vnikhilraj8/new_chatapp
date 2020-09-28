@@ -13,7 +13,6 @@ node{
     }
 
     stage('Deploy the pod'){
-        sh "sudo ssh -i /sanjana.pem -o StrictHostKeyChecking=no ubuntu@3.23.97.20 kubectl delete -f /kubernetes/deploy.yml"
-        sh "sudo ssh -i /sanjana.pem -o StrictHostKeyChecking=no ubuntu@3.23.97.20 kubectl apply -f /kubernetes/deploy.yml"
+        sh "sudo ssh -i /sanjana.pem -o StrictHostKeyChecking=no ubuntu@3.23.97.20 /kubernetes/./delete.sh"
     }
 }
