@@ -105,9 +105,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'chatdb',
         'USER': 'admin',
-        'PASSWORD': 'sanju1997',
-        'HOST': 'chat-app.cqlvtxq5ruoh.us-east-2.rds.amazonaws.com',
-        'PORT': '3306',
+        'PASSWORD': '*',
+        'HOST': '*',
+        'PORT': '*',
     }
 }
 #sagar kadam
