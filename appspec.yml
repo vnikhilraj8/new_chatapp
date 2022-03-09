@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /fundoo
+  - source: /requirements.txt
     destination: /root/new_chatapp
 hooks:
   BeforeInstall:
