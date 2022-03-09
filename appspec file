@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/new_chatapp
+    destination: /root/new_chatapp
 hooks:
   BeforeInstall:
     - location: scripts/Stop_Server.sh
