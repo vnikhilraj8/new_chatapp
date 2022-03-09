@@ -1,0 +1,5 @@
+#!/bin/bash
+isExistApp = `pgrep gunicorn`
+if [[ -n  $isExistApp ]]; then
+    service httpd gunicorn        
+fi
