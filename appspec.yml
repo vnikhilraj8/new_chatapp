@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /root/new_chatapp
+    destination: /home/ubuntu/new_chatapp
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies
