@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo systemctl restart gunicorn.service
+sudo systemctl stop gunicorn.service
