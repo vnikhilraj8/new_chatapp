@@ -2,14 +2,14 @@ version: 0.0
 os: linux
 files:
   - source: / 
-    destination: /root/new_chatapp
+    destination: /home/ubuntu/new_chatapp
 hooks:
   BeforeInstall:
-    - location: scripts/stop_server
+    - location: scripts/stop.sh
       timeout: 300
       runas: root
   ApplicationStop:
-    - location: scripts/start_server
+    - location: scripts/start.sh
       timeout: 300
       runas: root
 
