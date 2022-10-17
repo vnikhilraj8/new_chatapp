@@ -4,7 +4,7 @@ files:
   - source: / 
     destination: /home/ubuntu/new_chatapp
 hooks:
-   ApplicationStop:
+  ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 300
       runas: root
