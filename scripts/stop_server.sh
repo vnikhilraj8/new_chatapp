@@ -1,1 +1,2 @@
-sudo systemctl stop gunicorn.service
+sudo systemctl daemon-reload
+sudo systemctl start gunicorn.service
