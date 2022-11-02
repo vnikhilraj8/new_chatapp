@@ -103,7 +103,7 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mysqldb',
+        'NAME': 'mydb',
         'USER': 'admin',
         'PASSWORD': 'admin12345',
         'HOST': 'terraform-20221101164537739100000001.cyn1ofuj61xk.us-east-2.rds.amazonaws.com',
