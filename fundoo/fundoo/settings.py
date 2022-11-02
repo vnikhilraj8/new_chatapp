@@ -106,7 +106,7 @@ DATABASES = {
         'NAME': 'mysqldb',
         'USER': 'admin',
         'PASSWORD': 'admin12345',
-        'HOST': 'mysqldb.ckz7bawd2dzf.ap-south-1.rds.amazonaws.com',
+        'HOST': 'terraform-20221101164537739100000001.cyn1ofuj61xk.us-east-2.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
