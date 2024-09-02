@@ -17,7 +17,7 @@ django-allauth==0.38.0
 django-rest-auth==0.9.3
 djangorestframework==3.7.7
 drf-extensions==0.3.1
-gunicorn==19.9.0
+gunicorn==21.2.0
 hiredis==1.0.0
 hyperlink==18.0.0
 idna==2.8
